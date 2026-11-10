@@ -14,12 +14,22 @@
   box-sizing: border-box;
 }
 
+h1 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(22px, 5vw, 28px);
+  color: var(--text-color);
+  text-align: center;
+}
+
 body {
   margin: 0;
   padding: 0;
   width: 100vw;
   min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:'Times New Roman', Times, serif;
   color: var(--text-color);
   background: linear-gradient(135deg, var(--page-bg), #fff1f5);
 }
@@ -59,11 +69,9 @@ body {
   margin-bottom: 12px;
 }
 
-h1 {
-  margin: 0 0 8px;
-  font-size: clamp(24px, 5vw, 32px);
-  color: var(--text-color);
-  text-align: center;
+
+p {
+    text-align: center;
 }
 
 .intro {
@@ -76,6 +84,15 @@ h1 {
 form {
   text-align: center; 
 }
+
+legend {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--primary-color);
+  padding: 0 8px;
+}
+
+
 
 label {
   display: block;

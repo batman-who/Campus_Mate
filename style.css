@@ -1,31 +1,103 @@
-.table {
-    width: 80%;
-    margin: auto;
-    border-collapse: collapse;
-    background-color: white;
+/* ==========================================================
+   1. CSS VARIABLES: Theme Colors
+   Sets up reusable blue theme colors across your entire project.
+   ========================================================== */
+:root {
+  --primary-color: #2563eb; /* Bright blue for links and highlights */
+  --accent-color: #f91667;  /* Accent color */
+  --page-bg: #eef4ff;       /* Light blue background color */
+  --text-color: #172554;    /* Dark navy for main text readability */
+  --muted-color: #64748b;   /* Softer gray-blue for descriptions */
+  --border-color: #cbd5e1;  /* Subtle border color */
 }
 
-.th {
-    background-color: navy;
-    color: white;
+/* ==========================================================
+   2. BASIC PAGE LAYOUT & BACKGROUND
+   Sets margin, padding, light blue gradient background, and width.
+   ========================================================== */
+* {
+  box-sizing: border-box; /* Includes padding & border in total element width */
 }
 
-.th, td {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
+body {
+  margin: 0;
+  padding: 32px 16px;
+  min-height: 100vh;
+  font-family:'Times New Roman', Times, serif;
+  color: var(--text-color);
+  background: linear-gradient(135deg, var(--page-bg), #fff1f5); /* Light blue gradient background */
+  max-width: 900px; /* Limits content width for clean reading */
+  margin-left: auto;
+  margin-right: auto; /* Centers content horizontally on the screen */
 }
 
-.td {
-    color: black;
+/* ==========================================================
+   3. TYPOGRAPHY & HEADINGS
+   Styles page header titles, section titles, and paragraphs.
+   ========================================================== */
+h1, .h1 {
+  font-size: clamp(24px, 5vw, 32px); /* Automatically resizes text based on screen size */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  text-align: center;
 }
 
-.h1 {
-    font-size: 24px;
-    margin-auto;
-    margin-bottom: 20px;
+h2, h3 {
+  color: var(--text-color);
+  margin-top: 20px;
+  text-align: center;
 }
 
-.form {
-    max-width: 400px;
+p {
+  font-size: 14px;
+  color: var(--muted-color);
+  line-height: 1.5; /* Line height adds spacing between sentences */
+  text-align: center;
+}
+
+/* ==========================================================
+   5. TABLE STYLING (Navy headers + white body)
+   Styles your Timetable on main_2.html.
+   ========================================================== */
+.table, table {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse; /* Merges adjacent borders into single lines */
+  background-color: white;   /* White table background for contrast */
+}
+
+.th, th {
+  background-color: navy;    /* Solid navy header background */
+  color: white;             /* White header text */
+}
+
+.th, th, td {
+  border: 1px solid black;   /* Grid border around cells */
+  padding: 10px;
+  text-align: center;       /* Centers content inside cells */
+}
+
+.td, td {
+  color: black;
+  font-size: 13px;
+}
+
+
+/* ==========================================================
+   6. SECTIONS & FOOTER
+   ========================================================== */
+section {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+}
+
+footer {
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--muted-color);
+  text-align: center;
+  border-top: 1px solid var(--border-color); /* Light border line above footer */
+  padding-top: 12px;
 }

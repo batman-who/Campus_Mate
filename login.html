@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Campus Mate - Login page</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-            <h1>Campus Mate - Login page</h1>
-            <p>Login to your university here to access timetable and uni map of classes</p>
-        </header>
-        <nav>
-            <h2>🔗 Quick Navigation</h2>
-            <a href="main.html" target="_parent">Home</a>
-            <a href="login.html" target="_self">Login</a>
-            <a href="canteen.html" target="_self">Canteen</a>
-        </nav>
-        <main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Mate - Login page</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <h1>Campus Mate - Login page</h1>
+        <p>Login to your university here to access timetable and uni map of classes</p>
+    </header>
+    <nav>
+    <div style="position: absolute; top: 15px; right: 15px;">
+      <select onchange="if (this.value) window.location.href=this.value;" style="padding: 8px; border-radius: 8px; font-weight: bold;">      
+        <option value="">Menu</option>
+        <option value="main.html">Home</option>
+        <option value="login.html">Login</option>
+        <option value="canteen.html">Canteen</option>
+      </select>
+    </div>
+    </nav>
+        <main class="page">
+          <section class="card">
+
             <h2>Enter your University/College:</h2>
             <form action="/register" method="post">
                 <fieldset>
@@ -60,6 +66,8 @@
                         minlength="8">
                         <br><br>
                 </fieldset>
+                <button type="submit">Submit</button>
+            </form>
         </main>
         <footer>
             <p>CA2 Project- Jiya, Manasvi, Tanushka K2P26WE</p>

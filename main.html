@@ -13,10 +13,14 @@
     </header>
     <!-- Navigation bar -->
     <nav>
-            <h2>🔗 Quick Navigation</h2>
-            <a href="main.html" target="_parent">Home</a>
-            <a href="login.html" target="_self">Login</a>
-            <a href="canteen.html" target="_self">Canteen</a>
+        <div style="position: absolute; top: 15px; right: 15px;">
+            <select onchange="if (this.value) window.location.href=this.value;" style="padding: 8px; border-radius: 8px; font-weight: bold;">
+                <option value="">Menu</option>
+                <option value="main.html" selected>Home</option>
+                <option value="login.html">Login</option>
+                <option value="canteen.html">Canteen</option>
+            </select>
+        </div>
     </nav>
     <main>
         <section>
@@ -71,8 +75,8 @@
         
         <section>
             <h3>Looking for canteen?</h3>
-            <p>Campus Mate helps you find the best food options on campus. <br> Book your meal and enjoy your day!</p>
-            <a href="canteen.html" target="_self">Book your meal</a>
+            <p>Campus Mate helps you find the best food options on campus. <br> Book your meal and enjoy your day!<br><br>
+            <a href="canteen.html" target="_self" style="align: center; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Book your meal</a></p>
         </section>
     </main>
     <footer>
