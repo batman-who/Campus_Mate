@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <header>
+        <h1>Campus Mate - Canteen booking</h1>
+        <p>Book your meal at the best canteens on campus!</p>
+    </header>
+    <nav>
+        <a href="main.html" target="_parent">Home</a>
+        <a href="login.html" target="_self">Login</a>
+        <a href="canteen.html" target="_self">Canteen</a>
+    </nav>
+
+<main class="page">
+  <section class="card">
+
+    <h1>Book Your Meal🥪</h1>
+
+    <form>
+        <!-- Canteen Selection -->
+        <label for="canteen">Select your fav food place:🍽</label><br>
+        <select id="canteen" name="canteen">
+            <option value="Select Canteen">Select Canteen</option>
+            <option value="cc">CC</option>
+            <option value="talk-of-the-town">Talk of the Town</option>
+            <option value="chai-sutta-cafe">Chai Sutta Cafe</option>
+            <option value="kitchen-ette">kitchen Ette</option>
+            <option value="food-square">Food Square</option>
+            <option value="bake-studio">Bake Studio</option>
+            <option value="lovely-sweets">Lovely Sweets</option>
+        </select>
+        <br><br>
+
+        <!-- Food Item Selection -->
+        <label for="food">What's the mood today:😋</label><br>
+        <select id="food" name="food">
+            <option value="Select Food">Select Food</option>
+            <option value="rajma-chawal">Rajma Chawal</option>
+            <option value="roti-sabji">Roti Sabji</option>
+            <option value="masala-dosa">Masala Dosa</option>
+            <option value="white-sauce-pasta">White Sauce Pasta</option>
+            <option value="honey-chilli-potatoes">Honey Chilli Potatoes</option>
+        </select>
+        <br><br>
+
+        <!-- Beverage Selection -->
+        <label for="beverage">Need something to drink?🥂:</label><br>
+        <select id="beverage" name="beverage">
+            <option value="Select Beverage">Select Beverage</option>
+            <option value="chai">Chai</option>
+            <option value="hot-coffee">Hot coffee</option>
+            <option value="cold-coffee">cold coffee</option>
+            <option value="cold-drink">Cold drink</option>
+            <option value="fruit-juice">Fruit Juice</option>
+            <option value="hot-chocolate">Hot chocolate</option>
+            <option value="water-bottle">Water bottle</option>
+        </select>
+        <br><br>
+
+        <!-- Payment Method Selection -->
+        <label for="payment">Choose Payment Method: 💳</label>
+        <select id="payment" name="payment" required>
+            <option value="">Select payment option</option>
+            <option value="cash">Cash</option>
+            <option value="upi">UPI</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+</main>
+
+</body>
+</html>

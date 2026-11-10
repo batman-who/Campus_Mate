@@ -1,0 +1,141 @@
+/* 1. CSS VARIABLES: theme colors */
+:root {
+  --primary-color: #2563eb;
+  --accent-color: #f91667;
+  --card-bg: #ffffff;
+  --page-bg: #eef4ff;
+  --text-color: #172554;
+  --muted-color: #64748b;
+  --border-color: #cbd5e1;
+}
+
+/* 2. Basic page layout */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  background: linear-gradient(135deg, var(--page-bg), #fff1f5);
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* 3. Form/card styling */
+.card {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--card-bg);
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: 0 18px 45px rgba(37, 99, 235, 0.12);
+  animation: appear 0.6s ease-out both;
+  text-align: center; /* Centers everything inside the card */
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 12px;
+  color: var(--primary-color);
+  background: #dbeafe;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(24px, 5vw, 32px);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.intro {
+  font-size: 14px;
+  color: var(--muted-color);
+  margin-bottom: 24px;
+}
+
+/* Form Elements Alignment - Centered */
+form {
+  text-align: center; 
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 16px;
+  text-align: center; /* Centers the labels */
+}
+
+select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: #f8fafc;
+  color: var(--text-color);
+  outline: none;
+  text-align: center;          /* Centers text inside some browsers */
+  text-align-last: center;     /* Centers selected option in dropdown */
+  transition: all 0.2s ease;
+}
+
+select:focus {
+  border-color: var(--primary-color);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

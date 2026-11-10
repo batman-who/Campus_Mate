@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Campus Mate - Login page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Campus Mate - Login page</h1>
+            <p>Login to your university here to access timetable and uni map of classes</p>
+        </header>
+        <nav>
+            <h2>🔗 Quick Navigation</h2>
+            <a href="main.html" target="_parent">Home</a>
+            <a href="login.html" target="_self">Login</a>
+            <a href="canteen.html" target="_self">Canteen</a>
+        </nav>
+        <main>
+            <h2>Enter your University/College:</h2>
+            <form action="/register" method="post">
+                <fieldset>
+                    <legend>Enter your University</legend><br>
+                    <label for="uni">University</label>
+                    <select
+                        id="uni"
+                        name="uni"
+                        required>
+                    <option type="">Select your university</option>
+                    <option>Lovely Professional University, Phagwara, Punjab</option>
+                    <option>APJ, Jalandhar, Punjab</option>
+                    <option>IIT Delhi, Delhi</option>
+                    </select>
+                </fieldset>
+                <br><br>
+                <fieldset>
+                    <legend>University ID and Password</legend><br>
+                    <label for="reg">Username:</label>
+                    <input 
+                        type ="text"
+                        id="reg"
+                        name="reg"
+                        placeholder="Enter your full name"
+                        required
+                        minlength="3"
+                        pattern="[A-Za-z]+"
+                        title="Name must contain only letters and spaces">
+
+                        <br><br>
+
+                        <!--Password-->
+                        <label for="password">Password:</label><br>
+                        <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Minimum 8 characters"
+                        required
+                        minlength="8">
+                        <br><br>
+                </fieldset>
+        </main>
+        <footer>
+            <p>CA2 Project- Jiya, Manasvi, Tanushka K2P26WE</p>
+        </footer>
+    </body>
+</html>
