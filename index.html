@@ -10,11 +10,13 @@
 </head>
 <body>
     <header>
-        <h1>Campus Mate</h1>
-        <p>Your ultimate campus companion: <br>"Find a class, book your food, claim your day."</p>
+        <div class="header-copy">
+            <h1>Campus Mate</h1>
+            <p>Your ultimate campus companion: <br>"Find a class, book your food, claim your day."</p>
+        </div>
         <nav>
-            <div style="position: absolute; top: 15px; right: 15px;">
-            <select onchange="if (this.value) window.location.href=this.value;" style="padding: 8px; border-radius: 8px; font-weight: bold;">      
+            <div>
+            <select onchange="if (this.value) window.location.href=this.value;">
                 <option value="">Menu</option>
                 <option value="main.html">Home</option>
                 <option value="login.html">Login</option>
@@ -25,7 +27,7 @@
     </header>
 
     <main class="home-main">
-        <section>
+        <section class="classroom-section">
             <h3>Looking for empty classes?</h3>
             <p>Here are some available classes for you to choose from:</p>
             <table>
@@ -33,20 +35,27 @@
                 <th>Sr. No.</th>
                 <th>Day</th>
                 <th>Building No.</th>
-                <th>Classroom No.</th>
+                <th>Classroom No.</th>                    
                 <th>Available Time</th>
                 </tr>
 
                 <tr>
                 <td>1</td>
                 <td>Monday</td>
-                <td>Block 34</td>
+                <td>Block 34</td>                    
                 <td>Room 101</td>
                 <td>9:00 AM - 10:00 AM</td>
                 </tr>
-
                 <tr>
                 <td>2</td>
+                <td>Monday</td>
+                <td>Block 35</td>
+                <td>Room 801</td>
+                <td>10:00 AM - 11:50 AM</td>
+                </tr>
+
+                <tr>
+                <td>3</td>
                 <td>Tuesday</td>
                 <td>Block 35</td>
                 <td>Room 202</td>
@@ -54,15 +63,15 @@
                 </tr>
 
                 <tr>
-                <td>3</td>
+                <td>4</td>
                 <td>Wednesday</td>
                 <td>Block 36</td>
                 <td>Room 301</td>
                 <td>11:00 AM - 12:00 PM</td>
                 </tr>
 
-                <tr>                    
-                <td>4</td>
+                <tr>
+                <td>5</td>
                 <td>Thursday</td>
                 <td>Block 37</td>
                 <td>Room 102</td>
@@ -70,17 +79,35 @@
                 </tr>
 
                 <tr>
-                <td>5</td>
+                <td>6</td>
                 <td>Thursday</td>
                 <td>Block 33</td>
                 <td>Room 406</td>
                 <td>1:30 PM - 2:20 PM</td>
                 </tr>
+                <tr>
+                <td>7</td>
+                <td>Thursday</td>
+                <td>Block 35</td>
+                <td>Room 506</td>
+                <td>10:10 AM - 11:00 AM</td>
+                </tr>
+
+                <tr>
+                <td>8</td>
+                <td>Friday</td>
+                <td>Block 33</td>
+                <td>Room 307</td>
+                <td>12:40 PM - 2:20 PM</td>
+                </tr>
+                <tr>
+                <td>9</td>
+                <td>Friday</td>
+                <td>Block 36</td>
+                <td>Room 707</td>
+                <td>1:00 PM - 2:00 PM</td>
+                </tr>
                 </table>
-            </article>
-        </section>
-        
-        <section>
             <h3>Looking for canteen?</h3>
             <p>Campus Mate helps you find the best food options on campus. <br> Book your meal and enjoy your day!<br><br>
             <a href="canteen.html" target="_self" style="align: center; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Book your meal</a></p>
