@@ -11,10 +11,6 @@
   --border-color: #cbd5e1;  /* Subtle border color */
 }
 
-/* ==========================================================
-   2. BASIC PAGE LAYOUT & BACKGROUND
-   Sets margin, padding, light blue gradient background, and width.
-   ========================================================== */
 * {
   box-sizing: border-box; /* Includes padding & border in total element width */
 }
@@ -58,8 +54,7 @@ p {
 }
 
 /* ==========================================================
-   5. TABLE STYLING (Navy headers + white body)
-   Styles your Timetable on main_2.html.
+   TABLE STYLING (Navy headers + white body)
    ========================================================== */
 .table, table {
   width: 100%;

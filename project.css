@@ -92,8 +92,6 @@ legend {
   padding: 0 8px;
 }
 
-
-
 label {
   display: block;
   font-size: 14px;
@@ -129,7 +127,7 @@ button[type="submit"] {
   padding: 14px;
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
   background-color: var(--primary-color);
   border: none;
   border-radius: 10px;

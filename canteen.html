@@ -5,26 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="newtheme.css">
+    <script src="jsfiles/theme.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Campus Mate - Canteen booking</h1>
-        <p>Book your meal at the best canteens on campus!</p>
-    </header>
-    <!-- Navigation bar -->
-    <nav>
-        <div style="position: absolute; top: 15px; right: 15px;">
-            <select onchange="if (this.value) window.location.href=this.value;" style="padding: 8px; border-radius: 8px; font-weight: bold;">
+        <div class="header-copy">
+            <h1>Campus Mate - Canteen booking</h1>
+            <p>Book your meal at the best canteens on campus!</p>
+        </div>
+        <nav>
+            <div>
+            <select onchange="if (this.value) window.location.href=this.value;">
                 <option value="">Menu</option>
                 <option value="main.html">Home</option>
                 <option value="login.html">Login</option>
                 <option value="canteen.html">Canteen</option>
             </select>
-        </div>
-    </nav>
-
-<main class="page">
-  <section class="card">
+            </div>
+        </nav>
+    </header>
+ 
+<main class="page canteen-page">
+  <section class="card canteen-card">
 
     <h1>Book Your Meal🥪</h1>
 

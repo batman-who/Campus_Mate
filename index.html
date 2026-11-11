@@ -5,70 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Mate</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="newtheme.css">
+    <script src="jsfiles/theme.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Campus Mate</h1>
         <p>Your ultimate campus companion: <br>"Find a class, book your food, claim your day."</p>
+        <nav>
+            <div style="position: absolute; top: 15px; right: 15px;">
+            <select onchange="if (this.value) window.location.href=this.value;" style="padding: 8px; border-radius: 8px; font-weight: bold;">      
+                <option value="">Menu</option>
+                <option value="main.html">Home</option>
+                <option value="login.html">Login</option>
+                <option value="canteen.html">Canteen</option>
+            </select>
+            </div>
+        </nav>
     </header>
-    <!-- Navigation bar -->
-    <nav>
-    <div style="position: absolute; top: 15px; right: 15px;">
-      <select onchange="if (this.value) window.location.href=this.value;" style="padding: 8px; border-radius: 8px; font-weight: bold;">      
-        <option value="">Menu</option>
-        <option value="main.html">Home</option>
-        <option value="login.html">Login</option>
-        <option value="canteen.html">Canteen</option>
-      </select>
-    </div>
-    </nav>
-    <main>
+
+    <main class="home-main">
         <section>
             <h3>Looking for empty classes?</h3>
             <p>Here are some available classes for you to choose from:</p>
-            <article>
-                <h3>Check your Timetable</h3>
-                <table>
-                    <tr>
-                    <th>Sr. No.</th>
-                    <th>Day</th>
-                    <th>Building No.</th>
-                    <th>Classroom No.</th>
-                    <th>Available Time</th>
-                    </tr>
+            <table>
+                <tr>
+                <th>Sr. No.</th>
+                <th>Day</th>
+                <th>Building No.</th>
+                <th>Classroom No.</th>
+                <th>Available Time</th>
+                </tr>
 
-                    <tr>
-                    <td>1</td>
-                    <td>Monday</td>
-                    <td>Block 34</td>
-                    <td>Room 101</td>
-                    <td>9:00 AM - 10:00 AM</td>
-                    </tr>
+                <tr>
+                <td>1</td>
+                <td>Monday</td>
+                <td>Block 34</td>
+                <td>Room 101</td>
+                <td>9:00 AM - 10:00 AM</td>
+                </tr>
 
-                    <tr>
-                    <td>2</td>
-                    <td>Tuesday</td>
-                    <td>Block 35</td>
-                    <td>Room 202</td>
-                    <td>10:00 AM - 11:00 AM</td>
-                    </tr>
+                <tr>
+                <td>2</td>
+                <td>Tuesday</td>
+                <td>Block 35</td>
+                <td>Room 202</td>
+                <td>10:00 AM - 11:00 AM</td>
+                </tr>
 
-                    <tr>
-                    <td>3</td>
-                    <td>Wednesday</td>
-                    <td>Block 36</td>
-                    <td>Room 301</td>
-                    <td>11:00 AM - 12:00 PM</td>
-                    </tr>
+                <tr>
+                <td>3</td>
+                <td>Wednesday</td>
+                <td>Block 36</td>
+                <td>Room 301</td>
+                <td>11:00 AM - 12:00 PM</td>
+                </tr>
 
-                    <tr>
-                    <td>4</td>
-                    <td>Thursday</td>
-                    <td>Block 37</td>
-                    <td>Room 102</td>
-                    <td>1:00 PM - 2:00 PM</td>
-                    </tr>
+                <tr>                    
+                <td>4</td>
+                <td>Thursday</td>
+                <td>Block 37</td>
+                <td>Room 102</td>
+                <td>1:00 PM - 2:00 PM</td>
+                </tr>
 
+                <tr>
+                <td>5</td>
+                <td>Thursday</td>
+                <td>Block 33</td>
+                <td>Room 406</td>
+                <td>1:30 PM - 2:20 PM</td>
+                </tr>
                 </table>
             </article>
         </section>

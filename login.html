@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Mate - Login page</title>
     <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="newtheme.css">
+    <script src="jsfiles/theme.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Campus Mate - Login page</h1>
-        <p>Login to your university here to access timetable and uni map of classes</p>
+        <p>Login to your university here to access timetable <br>and uni map of classes</p>
+        <nav>
+            <div style="position: absolute; top: 15px; right: 15px;">
+            <select onchange="if (this.value) window.location.href=this.value;" style="padding: 8px; border-radius: 8px; font-weight: bold;">      
+                <option value="">Menu</option>
+                <option value="main.html">Home</option>
+                <option value="login.html">Login</option>
+                <option value="canteen.html">Canteen</option>
+            </select>
+            </div>
+        </nav>
     </header>
-    <nav>
-    <div style="position: absolute; top: 15px; right: 15px;">
-      <select onchange="if (this.value) window.location.href=this.value;" style="padding: 8px; border-radius: 8px; font-weight: bold;">      
-        <option value="">Menu</option>
-        <option value="main.html">Home</option>
-        <option value="login.html">Login</option>
-        <option value="canteen.html">Canteen</option>
-      </select>
-    </div>
-    </nav>
+
         <main class="page">
           <section class="card">
 
