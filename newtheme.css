@@ -370,6 +370,26 @@ legend {
   background: #fee2e2;
 }
 
+.login-success-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  max-width: calc(100vw - 40px);
+  padding: 12px 16px;
+  color: #166534;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+}
+
+:root[data-theme="dark"] .login-success-toast {
+  color: #bbf7d0;
+  background: #123523;
+  border-color: #166534;
+}
+
 :root[data-theme="dark"] .js-message.success {
   color: #bbf7d0;
   background: #123523;

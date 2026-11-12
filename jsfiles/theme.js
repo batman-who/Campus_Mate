@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     addPageAnimation();
     setupCanteenBooking();
     setupLoginForm();
+    setupLoginSuccessNotice();
     setupTimetable();
 });
 
@@ -177,13 +178,26 @@ function setupLoginForm() {
             return;
         }
 
-        showMessage(
-            form,
-            "Welcome, " + username.value.trim() +
-            "! Your demo login form is working. This project does not connect to a real university account.",
-            "success"
-        );
+        sessionStorage.setItem("campus-mate-login-success", "true");
+        window.location.href = "homepage.html";
     });
+}
+
+function setupLoginSuccessNotice() {
+    if (sessionStorage.getItem("campus-mate-login-success") !== "true") return;
+
+    sessionStorage.removeItem("campus-mate-login-success");
+
+    const notice = document.createElement("div");
+    notice.className = "login-success-toast";
+    notice.textContent = "successfully logged in";
+    notice.setAttribute("role", "status");
+    notice.setAttribute("aria-live", "polite");
+    document.body.appendChild(notice);
+
+    window.setTimeout(function () {
+        notice.remove();
+    }, 8000);
 }
 
 // -------------------- TIMETABLE PAGE --------------------
