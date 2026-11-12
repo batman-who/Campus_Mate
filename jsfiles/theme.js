@@ -58,15 +58,15 @@ function setupCanteenBooking() {
     const prices = {
         "rajma-chawal": 80,
         "roti-sabji": 60,
-        "masala-dosa": 70,
+        "masala-dosa": 90,
         "white-sauce-pasta": 110,
-        "honey-chilli-potatoes": 90,
-        "chai": 15,
-        "hot-coffee": 35,
-        "cold-coffee": 50,
-        "cold-drink": 30,
-        "fruit-juice": 40,
-        "hot-chocolate": 60,
+        "honey-chilli-potatoes": 100,
+        "chai": 20,
+        "hot-coffee": 40,
+        "cold-coffee": 35,
+        "cold-drink": 45,
+        "fruit-juice": 50,
+        "hot-chocolate": 55,
         "water-bottle": 20
     };
 

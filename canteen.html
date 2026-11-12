@@ -18,9 +18,11 @@
             <div>
             <select onchange="if (this.value) window.location.href=this.value;">
                 <option value="">Menu</option>
-                <option value="main.html">Home</option>
-                <option value="login.html">Login</option>
+                <option value="homepage.html">Home</option>
+                <option value="main.html">Class Finder</option>
                 <option value="canteen.html">Canteen</option>
+                <option value="survey.html">Survey</option>
+                <option value="login.html">Logout</option>
             </select>
             </div>
         </nav>
@@ -49,26 +51,26 @@
         <!-- Food Item Selection -->
         <label for="food">What's the mood today:😋</label><br>
         <select id="food" name="food">
-            <option value="Select Food">Select Food</option>
-            <option value="rajma-chawal">Rajma Chawal</option>
-            <option value="roti-sabji">Roti Sabji</option>
-            <option value="masala-dosa">Masala Dosa</option>
-            <option value="white-sauce-pasta">White Sauce Pasta</option>
-            <option value="honey-chilli-potatoes">Honey Chilli Potatoes</option>
+            <option value="Select Food" data-price="0">Select Food</option>
+            <option value="rajma-chawal" data-price="80">Rajma Chawal - ₹80</option>
+            <option value="roti-sabji" data-price="60">Roti Sabji - ₹60</option>
+            <option value="masala-dosa" data-price="90">Masala Dosa - ₹90</option>
+            <option value="white-sauce-pasta" data-price="110">White Sauce Pasta - ₹110</option>
+            <option value="honey-chilli-potatoes" data-price="100">Honey Chilli Potatoes - ₹100</option>
         </select>
         <br><br>
 
         <!-- Beverage Selection -->
         <label for="beverage">Need something to drink?🥂:</label><br>
         <select id="beverage" name="beverage">
-            <option value="Select Beverage">Select Beverage</option>
-            <option value="chai">Chai</option>
-            <option value="hot-coffee">Hot coffee</option>
-            <option value="cold-coffee">cold coffee</option>
-            <option value="cold-drink">Cold drink</option>
-            <option value="fruit-juice">Fruit Juice</option>
-            <option value="hot-chocolate">Hot chocolate</option>
-            <option value="water-bottle">Water bottle</option>
+            <option value="Select Beverage" data-price="0">Select Beverage</option>
+            <option value="chai" data-price="20">Chai - ₹20</option>
+            <option value="hot-coffee" data-price="40">Hot coffee - ₹40</option>
+            <option value="cold-coffee" data-price="35">cold coffee - ₹35</option>
+            <option value="cold-drink" data-price="45">Cold drink - ₹45</option>
+            <option value="fruit-juice" data-price="50">Fruit Juice - ₹50</option>
+            <option value="hot-chocolate" data-price="55">Hot chocolate - ₹55</option>
+            <option value="water-bottle" data-price="20">Water bottle - ₹20</option>
         </select>
         <br><br>
 
@@ -84,6 +86,8 @@
     </form>
 </section>
 </main>
-
+<footer>
+    <p>Campus Mate © 2026 | CA2 Project- Jiya, Manasvi, Tanushka K2P26WE</p>
+</footer>
 </body>
 </html>

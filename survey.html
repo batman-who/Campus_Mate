@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Mate - Student Feedback Survey</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="newtheme.css">
+  <script src="jsfiles/theme.js" defer></script>
+  <script src="jsfiles/survey.js" defer></script>
+  <style>
+    /* Survey Specific Styles */
+    :root {
+      --survey-bg: #ffffff;
+      --survey-card-border: #e2e8f0;
+      --survey-accent: #4f46e5;
+      --survey-accent-light: #e0e7ff;
+      --survey-text: #0f172a;
+      --survey-muted: #64748b;
+    }
+
+    [data-theme="dark"] {
+      --survey-bg: #1e293b;
+      --text-color: #91a3de;
+      --survey-card-border: #334155;
+      --survey-accent: #6366f1;
+      --survey-accent-light: #312e81;
+      --survey-text: #f8fafc;
+      --survey-muted: #94a3b8;
+    }
+
+    .survey-container {
+      max-width: 680px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.25rem;
+    }
+
+    .survey-card {
+      background: var(--survey-bg);
+      border: 1px solid var(--survey-card-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      color: var(--survey-text);
+      transition: all 0.3s ease;
+    }
+
+    .survey-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .survey-header h2 {
+      font-size: 1.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .survey-header p {
+      color: var(--survey-muted);
+      font-size: 0.95rem;
+    }
+
+    .question-block {
+      margin-bottom: 2rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--survey-card-border);
+    }
+
+    .question-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .q-number {
+      background: var(--survey-accent-light);
+      color: var(--survey-accent);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    /* Option Pill Cards */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      border: 1.5px solid var(--survey-card-border);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .option-label:hover {
+      border-color: var(--survey-accent);
+      background: rgba(79, 70, 229, 0.04);
+    }
+
+    .option-label input[type="radio"] {
+      margin-right: 12px;
+      accent-color: var(--survey-accent);
+      width: 18px;
+      height: 18px;
+    }
+
+    .option-label:has(input:checked) {
+      border-color: var(--survey-accent);
+      background: rgba(79, 70, 229, 0.08);
+      font-weight: 600;
+    }
+
+    /* Conditional input for 'Something else' */
+    #q1SpecifyBox {
+      display: none;
+      margin-top: 10px;
+    }
+
+    /* Interactive 5-Star Rating */
+    .star-rating-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 1rem 0;
+    }
+
+    .stars {
+      display: flex;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .star {
+      font-size: 2.5rem;
+      color: #cbd5e1;
+      transition: color 0.15s ease, transform 0.15s ease;
+      user-select: none;
+    }
+
+    .star.active, .star.hovered {
+      color: #fbbf24;
+      transform: scale(1.1);
+    }
+
+    .rating-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--survey-muted);
+      height: 20px;
+    }
+
+    /* Textareas */
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--survey-card-border);
+      border-radius: 12px;
+      background: transparent;
+      color: var(--survey-text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      resize: vertical;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    textarea:focus, input[type="text"]:focus {
+      border-color: var(--survey-accent);
+    }
+
+    /* Submit Button */
+    .submit-survey-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--survey-accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .submit-survey-btn:hover {
+      background: #4338ca;
+      transform: translateY(-2px);
+    }
+
+    /* Success Celebration Card */
+    .survey-success-state {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .survey-success-state .icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: pop 0.4s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      80% { transform: scale(1.15); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header Navigation -->
+  <header>
+    <div class="header-copy">
+      <h1>Campus Mate</h1>
+      <p>Student Feedback & Experience Survey</p>
+    </div>
+    <nav>
+      <div>
+        <select onchange="if (this.value) window.location.href=this.value;">
+            <option value="" >Menu</option>
+            <option value="homepage.html">Home</option>
+            <option value="main.html">Class Finder</option>
+            <option value="canteen.html">Canteen</option>
+            <option value="survey.html">Survey</option>
+            <option value="login.html">Logout</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <main class="survey-container">
+    <div class="survey-card" id="surveyCard">
+
+      <div class="survey-header">
+        <h2>Help Us Improve CampusMate 💬</h2>
+        <p>Your honest answers help us build a better campus experience for everyone.</p>
+      </div>
+
+      <form id="campusMateSurvey">
+
+        <!-- Q1 -->
+        <div class="question-block">
+          <label class="question-title">
+            <span class="q-number">1</span>
+            What was your biggest challenge before using Campus Mate?
+          </label>
+          <div class="options-grid">
+            <label class="option-label">
+              <input type="radio" name="q1" value="Finding empty classrooms" required>
+              Finding empty classrooms
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q1" value="Canteen ordering">
+              Canteen ordering
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q1" value="Finding campus information">
+              Finding campus information
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q1" value="Something else" id="q1OtherRadio">
+              Something else
+            </label>
+            <input 
+              type="text" 
+              id="q1SpecifyBox" 
+              name="q1_other" 
+              placeholder="Please specify your challenge..." 
+              style="padding: 10px 14px; border: 1.5px solid var(--survey-card-border); border-radius: 8px; width: 100%; box-sizing: border-box;"
+            >
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-block">
+          <label class="question-title">
+            <span class="q-number">2</span>
+            How much has Campus Mate helped you?
+          </label>
+          <div class="options-grid">
+            <label class="option-label">
+              <input type="radio" name="q2" value="A lot! Things are much easier" required>
+              A lot! Things are much easier
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q2" value="Somewhat easier">
+              Somewhat easier
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q2" value="Not much difference">
+              Not much difference
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q2" value="Haven't used it enough yet">
+              Haven't used it enough yet
+            </label>
+          </div>
+        </div>
+
+        <!-- Q3: Interactive 5 Stars -->
+        <div class="question-block">
+          <label class="question-title">
+            <span class="q-number">3</span>
+            How would you rate your Campus Mate experience?
+          </label>
+          <div class="star-rating-container">
+            <div class="stars" id="starGroup">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <span class="rating-label" id="ratingText">Tap a star to rate</span>
+            <input type="hidden" name="rating" id="ratingValue" value="" required>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-block">
+          <label class="question-title" for="difficulties">
+            <span class="q-number">4</span>
+            Did you face any difficulties while using Campus Mate?
+          </label>
+          <textarea 
+            id="difficulties" 
+            name="difficulties" 
+            rows="3" 
+            placeholder="Describe any issues, confusion, or slow loading you experienced..."
+          ></textarea>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-block" style="border-bottom: none;">
+          <label class="question-title" for="improvements">
+            <span class="q-number">5</span>
+            What should we improve or add?
+          </label>
+          <textarea 
+            id="improvements" 
+            name="improvements" 
+            rows="4" 
+            placeholder="Any bugs, missing features, suggestions, or things you didn't like? We'd love to hear your thoughts!"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-survey-btn">Submit Feedback 🚀</button>
+      </form>
+
+      <!-- Success Screen -->
+      <div class="survey-success-state" id="surveySuccessState">
+        <div class="icon">🎉</div>
+        <h3>Thank You for Your Feedback!</h3>
+        <p style="color: var(--survey-muted); max-width: 450px; margin: 0.5rem auto 1.5rem;">
+          Your responses have been recorded. We'll use your suggestions to make CampusMate even better!
+        </p>
+        <button type="button" class="submit-survey-btn" style="max-width: 220px; margin: 0 auto; display: block;" onclick="window.location.href='main.html'">
+          Back to Home
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>CA2 Project - Jiya, Manasvi, Tanushka K2P26WE</p>
+  </footer>
+</body>
+</html>
